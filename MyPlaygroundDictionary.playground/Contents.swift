@@ -41,52 +41,56 @@ func encryptMessage(input: String) -> String {
     return temp
 }
 
-encryptMessage(input: "hello programmer")
+//print(encryptMessage(input: "hello programmer"))
 
-var numbers = [1, 2, 3, 4, 1]
-func createDictionaryFromArray(array: [Int]) -> [Int:Int] {
+var numbers: [Int] = []
+//var numbers = [0, 2, 3, 5]
+func arrayToDict(array: [Int]) -> [Int:Int] {
     var myDict : [Int : Int] = [:]
     let count = 1
-    for i in 0...numbers.count-1{
-        if myDict[numbers[i]] != nil{
-            myDict[numbers[i]] = count + 1
-        } else {
-            myDict[numbers[i]] = count
+    if numbers.count != 0 {
+        for i in 0...numbers.count-1{
+            if myDict[numbers[i]] != nil{
+                myDict[numbers[i]] = count + 1
+            } else {
+                myDict[numbers[i]] = count
+            }
         }
     }
     return myDict
 }
-createDictionaryFromArray(array: numbers)
+//print(arrayToDict(array: numbers))
 
-var student = [
+var student: [String: Float] = [
     "Moldaly Aida":4.0,
-    "Asylbek Asema":3.5,
+    "Asylbek Asema":3.1,
     "Margulan Bahtyiar":3.0
 ]
-func averageGpa(dictionary: [String:Double]) -> Double {
-    var temp: Double = 0.0
+func averageGpa(dictionary: [String:Float]) -> Float {
+    var temp: Float = 0.0
     for values in student.values {
-        temp += Double(values)
+        temp += Float(values)
     }
-    let average: Double = temp / Double(student.count)
+    let average: Float = temp / Float(student.count)
     return average
 }
-averageGpa(dictionary: student)
+print(averageGpa(dictionary: student))
 
-func averageGpaLargerThanThree(dictionary: [String:Double]) -> [String:Double] {
-    var myDict : [String:Double] = [:]
+
+func gpaLargerThree(dictionary: [String:Float]) -> [String:Float] {
+    var myDict : [String:Float] = [:]
     for (key, values) in student {
-        if Double(values) > 3.0 {
-            myDict[key] = Double(values)
+        if Float(values) > 3.0 {
+            myDict[key] = Float(values)
         }
     }
     return myDict
 }
-averageGpaLargerThanThree(dictionary: student)
+print(gpaLargerThree(dictionary: student))
 
 var studentsA = ["Moldaly","Aida","Asylbek","Asema","Margulan","Bahtyar"]
 
-func theSameWords(array: [String]) -> [String:Int] {
+func arrayToDict(array: [String]) -> [String:Int] {
     var myDict : [String:Int] = [:]
     let count = 1
     for i in 0...studentsA.count - 1 {
@@ -98,4 +102,4 @@ func theSameWords(array: [String]) -> [String:Int] {
     }
     return myDict
 }
-theSameWords(array: studentsA)
+//print(arrayToDict(array: studentsA))
