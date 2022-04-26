@@ -1,16 +1,22 @@
 import UIKit
 
-var numbers = [1, 2, 0, 3, 1, 4]
-func checkForOneZero(array: [Int]) -> Bool {
-    for item in numbers {
-        if (item == 0){
-            return true
+var numbers: [Int] = []
+//var numbers = [1, 0, 4, 5, 6]
+func containsZero(array: [Int]) -> Bool {
+    if numbers.count != 0 {
+        for item in numbers {
+            if (item == 0){
+                return true
+            }
         }
     }
     return false
 }
+print(containsZero(array: numbers))
 
-func checkForTwoZeros(array: [Int]) -> Bool {
+//var numbers: [Int] = []
+//var numbers = [1, 0, 0, 5, 6]
+func containsTwoZeros(array: [Int]) -> Bool {
     var count = 0
     for item in numbers {
         if (item == 0) {
@@ -23,43 +29,50 @@ func checkForTwoZeros(array: [Int]) -> Bool {
         return false
     }
 }
+//print(containsTwoZeros(array: numbers))
 
-func checkForThreeZeros(array: [Int]) -> Bool {
-    var index = 0
-    for item in numbers {
-        if (item != 0) {
-           index += 1
-        } else {
-            break
+//var numbers: [Int] = []
+//var numbers = [1, 0, 0, 0, 9]
+func containsThreeZeros(array: [Int]) -> Bool {
+    if numbers.count != 0 {
+        for i in 0..<numbers.count - 2 {
+            if numbers[i..<i + 3] == [0,0,0] {
+                return true
+            }
         }
     }
-    if (numbers[index + 1] == 0 && numbers[index + 2] == 0){
-        return true
-    } else {
-        return false
-    }
+    return false
 }
 
-func sumOfAllElaments(array: [Int]) {
+//print(containsThreeZeros(array: numbers))
+
+//var numbers: [Int] = []
+//var numbers = [1, 0, 0, 0, 9]
+func sumElements(array: [Int]) -> Int {
     var sum = 0
     for item in numbers {
            sum += item
     }
-    print(sum)
+    return sum
 }
+//print(sumElements(array: numbers))
 
-func cloneOfArrayReversed(array: [Int]) -> [Int]{
-    let totalIndices = numbers.count - 1
-
+//var numbers: [Int] = []
+//var numbers = [9, 0, 0, 0, 9]
+func arrayReversed(array: [Int]) -> [Int]{
     var reversedNumbers = [Int]()
 
-    for arrayIndex in 0...totalIndices {
-        reversedNumbers.append(numbers[totalIndices - arrayIndex])
+    for arrayElements in numbers {
+        reversedNumbers.insert(arrayElements, at: 0)
     }
     return reversedNumbers
 }
 
-func countEvenAndOddNumbers(array: [Int]) {
+//print(arrayReversed(array: numbers))
+
+//var numbers: [Int] = []
+//var numbers = [9, 0, 0, 0, 9]
+func EvenOddNumbers(array: [Int]) {
     var evenNumbers = 0
     var oddNumbers = 0
     for item in numbers {
@@ -73,8 +86,15 @@ func countEvenAndOddNumbers(array: [Int]) {
     print("Нечетные числа: \(oddNumbers)")
 }
 
-func diffOfTheLargestAndTheSmallestNumbers(array: [Int]) {
-    var theLargestNumber = 0
+//print(EvenOddNumbers(array: numbers))
+
+//var numbers: [Int] = []
+//var numbers = [1]
+func diffLargeSmall(array: [Int]) -> String {
+    if numbers.count == 0 {
+        return "Array is empty"
+    }
+    var theLargestNumber = numbers[0]
     for item in numbers {
         if (item > theLargestNumber) {
            theLargestNumber = item
@@ -86,13 +106,9 @@ func diffOfTheLargestAndTheSmallestNumbers(array: [Int]) {
            theSmallestNumber = item
         }
     }
-    print("Разницу между наибольшим и наименьшим числом: \(theLargestNumber - theSmallestNumber)")
+    return "Разницу между наибольшим и наименьшим числом: \(theLargestNumber - theSmallestNumber)"
 }
 
-checkForOneZero(array: numbers)
-checkForTwoZeros(array: numbers)
-checkForThreeZeros(array: numbers)
-sumOfAllElaments(array: numbers)
-cloneOfArrayReversed(array: numbers)
-countEvenAndOddNumbers(array: numbers)
-diffOfTheLargestAndTheSmallestNumbers(array: numbers)
+print(diffLargeSmall(array: numbers))
+
+
