@@ -1,46 +1,4 @@
 import Cocoa
-//
-//enum Weekday: CaseIterable {
-//    case monday, tuesday, wendesday, thursday, friday, saturday, sunday
-//}
-//
-//let weekday: Weekday = .sunday
-//
-//switch weekday {
-//case .monday, .tuesday, .wendesday, .thursday, .friday:
-////    print("Опять работа, бесит")
-//case .saturday, .sunday:
-////    print("Выходной")
-//}
-//
-//for weekday in Weekday.allCases {
-////    print(weekday)
-//}
-//
-//enum MovieGenreType {
-//    case action
-//    case comedy
-//    case drama
-//    case horror
-//    case fantasy
-//}
-//
-//let firstPersonPreferences: Set<MovieGenreType> = [.action, .comedy]
-//let secondPersonPreferences: Set<MovieGenreType> = [.action, .comedy, .comedy, .drama]
-//
-//for genre in firstPersonPreferences.intersection(secondPersonPreferences) {
-////    print(genre)
-//}
-//
-//enum Car: CaseIterable {
-//    case toyoto
-//    case bmw
-//    case mercedes
-//}
-//
-//for car in Car.allCases {
-////    print(car)
-//}
 
 enum TransportType {
     case airline
