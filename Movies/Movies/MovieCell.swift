@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StudentCell: UITableViewCell {
+class MovieCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
