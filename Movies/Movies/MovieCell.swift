@@ -2,7 +2,7 @@
 //  StudentCell.swift
 //  Movies
 //
-//  Created by Aida Moldaly on 18.05.2022.
+//  Created by Bakhtiyar on 18.05.2022.
 //
 
 import UIKit
